@@ -2,20 +2,30 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
-#include <string>
+#include <string.h>
 
 using namespace std;
 
 int main()
 
 {
+    int pos;
+    string fileName;
     string line;
     ifstream readingFile;
-    readingFile.open("testFile.txt",ios::binary);
+    string ending;
+    ending = ".ts";
 
-    if (readingFile.is_open())
+    cout << "What is the name of the file?" << endl;
+    cin >> fileName;
+
+    string fullFilename = strcat(fileName,ending);
+
+    readingFile.open(fullFilename,ios::binary | ios::in);
+
+    while (readingFile.is_open())
     {
-        while(getline(readingFile,line))
+        readingFile.read(&x,1);
         {
             cout << line << '\n';
         }
@@ -23,7 +33,7 @@ int main()
 
     }
 
-    else cout << "Unable to open file";
+    //else cout << "Unable to open file";
 
 
     }
