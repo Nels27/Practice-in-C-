@@ -10,6 +10,8 @@
 
 char strSwapper(str toBeChanged)
 {
+    //Method without using the swap method
+    
     int strLength = toBeChanged.size();
     int centerVal = '';
     int oddMid = int((strLength - 1)/2);
